@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Clock Ödevi</title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript">
+const days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
+let user = prompt("Kullancı Adını Giriniz::")
+function display_c(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct()',refresh)
+}
+
+function display_ct() {
+let dateTime = new Date()
+var x = dateTime.toLocaleTimeString("tr-TR", "HH:mm:ss") + " " + days[dateTime.getDay()]
+console.log(x)
+document.getElementById('ct').innerHTML = x;
+display_c();
+document.getElementById('helloUser').innerHTML = `Merhaba 
+${user}! Hoşgeldin!`;
+ }
+</script>
+</head>
+
+<body class="bg-dark" onload=display_ct();>
+<h1>KODLUYORUZ</h1>
+<div class="text1 text-center">
+    Merhaba, <strong><span id="helloUser"></span></strong>! Hoş geldin!
+</div> 
+<span id='ct' ></span>
+<p>tarihinde Kodluyoruz Frontend web development patikasının javascript bölümünün 1. ödevindesiniz</p>
+</body>
+</html>
